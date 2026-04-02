@@ -8,11 +8,13 @@ document.addEventListener( 'DOMContentLoaded', OnLoadedDom );
  */
 function OnLoadedDom() 
 {
-    const SCANNER = new Html5QrcodeScanner( "qr-reader", { fps: 15, qrbox: 240 } );
+    const SCANNER = new Html5QrcodeScanner( 'qr-reader', { fps: 15, qrbox: 250 } );
 
     const OnSucceeded = text =>
     {
-        document.getElementById("result").textContent="Scanned: "+ text;
+        const PARAMETERS = new URLSearchParams( location.search );
+
+        document.getElementById( 'result' ).textContent= 'Scanned: ' + text + ', origin: ' + PARAMETERS.get( 'origin' ) + ', access-type: ' + PARAMETERS.get( 'access-type' );
     };
 
     const OnFailed = () => {};
