@@ -27,9 +27,5 @@ function OnLoadedDom()
     } );
 
     const CANCEL_ELEMENT = document.getElementById( 'cancel' );
-
-    CANCEL_ELEMENT.RegisterOnPushed( () => 
-    {
-        window.close()
-    } );
+    CANCEL_ELEMENT.RegisterOnPushed( () => window.close() );
 }
