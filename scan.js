@@ -27,6 +27,6 @@ function OnLoadedDom()
         );
 
         // postMessageを正常に完了させ、不安定なバグの防止のため少し待機してから閉じる
-        setTimeout( () => window.close(), 10000 );
+        setTimeout( () => window.close(), 1000 );
     } );
 }
