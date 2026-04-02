@@ -18,11 +18,18 @@ function OnLoadedDom()
         const PARAMETERS = new URLSearchParams( location.search );
 
         window.opener.postMessage(
-            { type: "qr", value: text, access_type: PARAMETERS.get( 'access-type' ) },
+            { type: 'qr', value: text, access_type: PARAMETERS.get( 'access-type' ) },
             PARAMETERS.get( 'origin' )
         );
 
         // postMessageを正常に完了させ、不安定なバグの防止のため少し待機してから閉じる
         setTimeout( () => window.close(), 1000 );
+    } );
+
+    const CANCEL_ELEMENT = document.getElementById( 'cancel' );
+
+    CANCEL_ELEMENT.RegisterOnPushed( () => 
+    {
+        window.close()
     } );
 }
