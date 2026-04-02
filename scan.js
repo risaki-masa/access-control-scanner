@@ -2,7 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', OnLoadedDom );
 
-
 /**
  * DOMを読み込んだ時の処理
  */
@@ -15,6 +14,10 @@ function OnLoadedDom()
     {
         if ( is_scanned ) return;
         is_scanned = true;
+
+        const SE = document.getElementById( 'se' );
+        SE.currentTime = 0;
+        SE.play();
 
         const PARAMETERS = new URLSearchParams( location.search );
 
