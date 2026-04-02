@@ -8,16 +8,22 @@ document.addEventListener( 'DOMContentLoaded', OnLoadedDom );
  */
 function OnLoadedDom() 
 {
-    const SCANNER = new Html5QrcodeScanner( 'qr-reader', { fps: 15, qrbox: 250 } );
+    let     is_scanned  = false;
+    const   SCANNER     = new Html5QrcodeScanner( 'qr-reader', { fps: 15, qrbox: 250 } );
 
-    const OnSucceeded = text =>
+    SCANNER.render( text => 
     {
+        if ( is_scanned ) return;
+        is_scanned = true;
+
         const PARAMETERS = new URLSearchParams( location.search );
 
-        document.getElementById( 'result' ).textContent= 'Scanned: ' + text + ', origin: ' + PARAMETERS.get( 'origin' ) + ', access-type: ' + PARAMETERS.get( 'access-type' );
-    };
+        window.opener.postMessage(
+            { type: "qr", value: text, access_type: PARAMETERS.get( 'access-type' ) },
+            PARAMETERS.get( 'origin' )
+        );
 
-    const OnFailed = () => {};
-
-    SCANNER.render( OnSucceeded, OnFailed );
+        // postMessageを正常に完了させ、不安定なバグの防止のため少し待機してから閉じる
+        setTimeout( () => window.close(), 1000 );
+    } );
 }

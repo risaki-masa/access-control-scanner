@@ -6,7 +6,7 @@
     <title>QRコードの読み取り</title>
     <script src="https://unpkg.com/html5-qrcode">
     </script>
-    <!-- <style>
+    <style>
       *{box-sizing:border-box;margin:0;padding:0}
       body{font-family:sans-serif;background:#111;color:#fff;min-height:100vh}
       .top{display:flex;justify-content:space-between;padding:12px 16px;background:#222}
@@ -16,12 +16,11 @@
       #qr-reader video{width:100%!important}
       #qr-reader__dashboard button{background:#3b82f6!important;color:#fff!important;border:none!important;border-radius:8px!important;padding:10px 20px!important;cursor:pointer!important}
       select{background:#333!important;color:#fff!important;border:1px solid #555!important;border-radius:6px!important;padding:8px!important}
-    </style> -->
+    </style>
     </head>
   <body>
     <div class="top">
     <h1>QRコードの読み取り</h1>
-    <button class="done" onclick="finish()">Done</button></div>
     <div id="qr-reader"></div>
     <div id="result"></div>
     <script src="scan.js"></script>
