@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Lucida Grande", "Arial", "ヒラギノ角ゴシック", "Hiragino Sans", YuGothic, "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+    color : #111;
+    width: inherit;
+    height: inherit;
+    background-color:#fdfff3;
+    line-height: 1.8;
+}
+
+h1 {
+    font-size: 26px;
+    text-align: center;
+}
+
+#qr-reader {
+    margin: 30px;
+}
