@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>QRコードの読み取り</title>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    </head>
-  <body>
-    <h1>QRコードの読み取り</h1>
-    <div class="right-align">
-        <button id="cancel">キャンセル</button>
-    </div>
-    
-    <div id="qr-scanner"></div>
-
-    <script src="utility.js"></script>
-    <script src="element-extensions.js"></script>
-    <script src="event.js"></script>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <title>QRコードの読み取り</title>
+        <script src="https://unpkg.com/html5-qrcode"></script>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        </head>
+    <body>
+        <div id="inner">
+            <h1>QRコードの読み取り</h1>
+            <div class="right-align">
+                <button id="cancel">キャンセル</button>
+            </div>
+            <div id="qr-scanner"></div>
+        </div>
+        <script src="utility.js"></script>
+        <script src="element-extensions.js"></script>
+        <script src="event.js"></script>
+    </body>
 </html>
