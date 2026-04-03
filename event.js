@@ -28,9 +28,9 @@ function OnLoadedDom()
     } );
 
     const CANCEL_ELEMENT = document.getElementById( 'cancel' );
-    CANCEL_ELEMENT.RegisterOnPushed( () => {
+    CANCEL_ELEMENT.RegisterOnPushed( () =>
+    {
         if ( is_scanned ) return;
-
         CloseWindow( SCANNER );
     } );
 }

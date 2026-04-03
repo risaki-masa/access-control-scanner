@@ -25,6 +25,7 @@ body {
 h1 {
     font-size: 26px;
     text-align: center;
+    margin: 10px 0;
 }
 
 .right-align
@@ -43,5 +44,5 @@ h1 {
     padding: 11px 22px;
     cursor: pointer;
     background-color: coral;
-    margin: 10px 5px;
+    margin: 5px;
 }
