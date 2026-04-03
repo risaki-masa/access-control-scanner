@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', OnLoadedDom );
 function OnLoadedDom() 
 {
     let     is_scanned  = false;
-    const   SCANNER     = new Html5QrcodeScanner( 'qr-reader', { fps: 15, qrbox: 250 } );
+    const   SCANNER     = new Html5QrcodeScanner( 'qr-scanner', { fps: 15, qrbox: 250 } );
 
     SCANNER.render( text => 
     {
