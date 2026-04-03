@@ -22,13 +22,24 @@ function OnLoadedDom()
             PARAMETERS.get( 'origin' )
         );
 
+
         // postMessageを正常に完了させ、不安定なバグを防止するため少し待機してから閉じる
-        setTimeout( () => window.close(), 1000 );
+        setTimeout( () => CloseWindow( SCANNER), 1000 );
     } );
 
     const CANCEL_ELEMENT = document.getElementById( 'cancel' );
     CANCEL_ELEMENT.RegisterOnPushed( () => {
         if ( is_scanned ) return;
-        window.close();
+
+        CloseWindow( SCANNER );
     } );
+}
+
+/**
+ * ウィンドウを閉じる
+ */
+function CloseWindow( scanner ) 
+{
+    scanner.clear();
+    window.close();
 }
