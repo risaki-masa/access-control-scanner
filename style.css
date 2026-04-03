@@ -27,6 +27,12 @@ h1 {
     text-align: center;
 }
 
+.right-align
+{
+    display: flex;
+    justify-content: right;
+}
+
 #cancel {
     -webkit-appearance: none;
     border-radius: 3px;
@@ -37,4 +43,5 @@ h1 {
     padding: 12px 24px;
     cursor: pointer;
     background-color: coral;
+    margin: 10px 5px;
 }
