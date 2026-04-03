@@ -38,8 +38,19 @@ function OnLoadedDom()
 /**
  * ウィンドウを閉じる
  */
-function CloseWindow( scanner ) 
+async function CloseWindow( scanner ) 
 {
-    scanner.clear();
+    try {
+        if ( scanner ) 
+        {
+            await scanner.stop();
+            scanner.clear();
+        }
+    } 
+    catch ( e ) 
+    {
+        console.error( "停止エラー: ", e );
+    }
+
     window.close();
 }
